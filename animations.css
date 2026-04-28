@@ -1,0 +1,1386 @@
+/* ============================================
+   CarbonWise - Animations Stylesheet
+   动画关键帧与交互特效
+   ============================================ */
+
+/* ------------------------------------------
+   1. 基础动画关键帧 (Keyframes)
+   ------------------------------------------ */
+
+/* 淡入 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 淡出 */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* 从下方滑入 */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 从上方滑入 */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 从左侧滑入 */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 从右侧滑入 */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 缩放进入 */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 缩放退出 */
+@keyframes scaleOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* 弹跳进入 */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 旋转 */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 脉冲 */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* 弹跳 */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 摇晃 */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-4px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(4px);
+    }
+}
+
+/* 闪烁（骨架屏） */
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* 渐变流动 */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 浮动 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* 呼吸灯 */
+@keyframes breathe {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+    }
+}
+
+/* 粒子上升 */
+@keyframes particleRise {
+    0% {
+        opacity: 0;
+        transform: translateY(100%) scale(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) scale(1);
+    }
+}
+
+/* 数字滚动 */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 环形扩散 */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* 光标闪烁 */
+@keyframes cursorBlink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* 波浪 */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+}
+
+/* 摇摆 */
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(5deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    60% {
+        transform: rotate(3deg);
+    }
+    80% {
+        transform: rotate(-3deg);
+    }
+}
+
+/* 心跳 */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/* 模糊淡入 */
+@keyframes blurIn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* 翻转进入 */
+@keyframes flipIn {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateY(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateY(0);
+    }
+}
+
+/* 打字机效果 */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* 下划线展开 */
+@keyframes underlineExpand {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* ------------------------------------------
+   2. 滚动触发动画 (Scroll Animations)
+   ------------------------------------------ */
+
+/* 滚动触发基础类 */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 延迟变体 */
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.reveal-delay-5 {
+    transition-delay: 0.5s;
+}
+
+/* 方向变体 */
+.reveal-up {
+    transform: translateY(24px);
+}
+
+.reveal-down {
+    transform: translateY(-24px);
+}
+
+.reveal-left {
+    transform: translateX(-24px);
+}
+
+.reveal-right {
+    transform: translateX(24px);
+}
+
+.reveal-scale {
+    transform: scale(0.95);
+}
+
+.reveal-blur {
+    filter: blur(8px);
+    transform: none;
+}
+
+.reveal-blur.visible {
+    filter: blur(0);
+}
+
+/* 交错动画容器 */
+.stagger-container .stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-container.visible .stagger-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.stagger-container.visible .stagger-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.stagger-container.visible .stagger-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.stagger-container.visible .stagger-item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.stagger-container.visible .stagger-item:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.stagger-container.visible .stagger-item:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+.stagger-container.visible .stagger-item:nth-child(7) {
+    transition-delay: 0.6s;
+}
+
+.stagger-container.visible .stagger-item:nth-child(8) {
+    transition-delay: 0.7s;
+}
+
+.stagger-container.visible .stagger-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 视差滚动 */
+.parallax {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+/* ------------------------------------------
+   3. 粒子动画系统 (Particle System)
+   ------------------------------------------ */
+
+/* 粒子容器 */
+.particle-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 基础粒子 */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleRise linear infinite;
+}
+
+/* 粒子变体 */
+.particle-sm {
+    width: 4px;
+    height: 4px;
+}
+
+.particle-md {
+    width: 8px;
+    height: 8px;
+}
+
+.particle-lg {
+    width: 12px;
+    height: 12px;
+}
+
+/* 粒子颜色 */
+.particle-green {
+    background: var(--color-primary);
+    box-shadow: 0 0 6px var(--color-primary);
+}
+
+.particle-green-light {
+    background: var(--color-primary-light);
+    box-shadow: 0 0 8px var(--color-primary-light);
+}
+
+.particle-white {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.particle-accent {
+    background: var(--color-accent);
+    box-shadow: 0 0 8px var(--color-accent);
+}
+
+/* 粒子动画时长变体 */
+.particle-slow {
+    animation-duration: 15s;
+}
+
+.particle-normal {
+    animation-duration: 10s;
+}
+
+.particle-fast {
+    animation-duration: 6s;
+}
+
+/* 碳粒子特殊效果（首页背景） */
+.carbon-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: floatParticle 20s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translate(30px, -50px) scale(1.2);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-20px, -100px) scale(0.8);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translate(40px, -30px) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+/* 连接线条动画 */
+.connection-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 2s ease forwards;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ------------------------------------------
+   4. 交互反馈动画 (Interaction Feedback)
+   ------------------------------------------ */
+
+/* 点击涟漪效果 */
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ripple-effect:active::after {
+    animation: rippleClick 0.6s ease-out;
+}
+
+@keyframes rippleClick {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* 按钮点击反馈 */
+.btn-click-effect {
+    transition: transform 0.15s ease;
+}
+
+.btn-click-effect:active {
+    transform: scale(0.96);
+}
+
+/* 卡片悬停抬升 */
+.card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 图片悬停缩放 */
+.img-zoom {
+    overflow: hidden;
+}
+
+.img-zoom img {
+    transition: transform 0.5s ease;
+}
+
+.img-zoom:hover img {
+    transform: scale(1.08);
+}
+
+/* 链接下划线动画 */
+.link-underline {
+    position: relative;
+    text-decoration: none;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* 图标悬停旋转 */
+.icon-rotate {
+    transition: transform 0.3s ease;
+}
+
+.icon-rotate:hover {
+    transform: rotate(15deg);
+}
+
+/* 列表项悬停滑动 */
+.list-slide {
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.list-slide:hover {
+    transform: translateX(4px);
+}
+
+/* 输入框聚焦发光 */
+.input-glow:focus {
+    animation: inputPulse 1.5s ease infinite;
+}
+
+@keyframes inputPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 3px var(--color-primary-bg);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.1);
+    }
+}
+
+/* 成功勾选动画 */
+.check-animation {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    animation: checkDraw 0.4s ease forwards;
+}
+
+@keyframes checkDraw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* 错误抖动 */
+.shake-error {
+    animation: shake 0.5s ease;
+}
+
+/* 加载点动画 */
+.loading-dots {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.loading-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    animation: dotPulse 1.4s ease infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 进度完成庆祝 */
+.celebrate {
+    animation: celebratePop 0.6s ease;
+}
+
+@keyframes celebratePop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ------------------------------------------
+   5. 页面转场动画 (Page Transitions)
+   ------------------------------------------ */
+
+/* 页面进入 */
+.page-enter {
+    animation: pageEnter 0.4s ease;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 页面退出 */
+.page-exit {
+    animation: pageExit 0.3s ease forwards;
+}
+
+@keyframes pageExit {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* 路由切换滑动 */
+.route-slide-enter {
+    animation: routeSlideEnter 0.3s ease;
+}
+
+.route-slide-exit {
+    animation: routeSlideExit 0.3s ease forwards;
+}
+
+@keyframes routeSlideEnter {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes routeSlideExit {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+/* 标签页切换 */
+.tab-slide-enter {
+    animation: tabSlide 0.25s ease;
+}
+
+@keyframes tabSlide {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 模态框背景淡入 */
+.modal-backdrop-enter {
+    animation: backdropIn 0.3s ease;
+}
+
+@keyframes backdropIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 侧边栏滑入 */
+.sidebar-enter {
+    animation: sidebarSlide 0.3s ease;
+}
+
+@keyframes sidebarSlide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* 下拉菜单展开 */
+.dropdown-enter {
+    animation: dropdownExpand 0.2s ease;
+    transform-origin: top;
+}
+
+@keyframes dropdownExpand {
+    from {
+        opacity: 0;
+        transform: scaleY(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* 工具提示弹出 */
+.tooltip-enter {
+    animation: tooltipPop 0.2s ease;
+}
+
+@keyframes tooltipPop {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ------------------------------------------
+   6. 数据可视化动画 (Data Visualization)
+   ------------------------------------------ */
+
+/* 图表绘制 */
+.chart-draw {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: chartDraw 1.5s ease forwards;
+}
+
+@keyframes chartDraw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* 柱状图增长 */
+.bar-grow {
+    transform-origin: bottom;
+    animation: barGrow 0.8s ease forwards;
+    transform: scaleY(0);
+}
+
+@keyframes barGrow {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* 饼图扇形展开 */
+.pie-slice {
+    transform-origin: center;
+    animation: pieSlice 0.8s ease forwards;
+    transform: scale(0) rotate(-90deg);
+}
+
+@keyframes pieSlice {
+    to {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* 雷达图脉冲 */
+.radar-pulse {
+    animation: radarPulse 2s ease infinite;
+}
+
+@keyframes radarPulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* 数字递增动画 */
+.count-up {
+    display: inline-block;
+    animation: countUp 0.5s ease;
+}
+
+/* 仪表盘指针旋转 */
+.gauge-needle {
+    transform-origin: bottom center;
+    animation: gaugeMove 1s ease forwards;
+}
+
+@keyframes gaugeMove {
+    from {
+        transform: rotate(-90deg);
+    }
+}
+
+/* 趋势线上点闪烁 */
+.trend-dot {
+    animation: trendBlink 2s ease infinite;
+}
+
+@keyframes trendBlink {
+    0%, 100% {
+        opacity: 1;
+        r: 4;
+    }
+    50% {
+        opacity: 0.6;
+        r: 6;
+    }
+}
+
+/* 热力图颜色渐变 */
+.heatmap-cell {
+    transition: fill 0.5s ease;
+}
+
+/* 地图区域高亮 */
+.map-region {
+    transition: fill 0.3s ease, stroke-width 0.3s ease;
+}
+
+.map-region:hover {
+    stroke-width: 2;
+    filter: brightness(1.1);
+}
+
+/* ------------------------------------------
+   7. 特殊效果 (Special Effects)
+   ------------------------------------------ */
+
+/* 霓虹发光 */
+.neon-glow {
+    animation: neonPulse 2s ease infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        text-shadow: 0 0 5px var(--color-primary), 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+    }
+    50% {
+        text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary), 0 0 40px var(--color-primary);
+    }
+}
+
+/* 全息效果 */
+.holographic {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.3) 25%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.3) 75%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    background-size: 200% 200%;
+    animation: holographicShift 3s ease infinite;
+}
+
+@keyframes holographicShift {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+/* 玻璃拟态光泽 */
+.glass-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-shine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    animation: glassShine 6s ease infinite;
+}
+
+@keyframes glassShine {
+    0%, 100% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    50% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+/* 碳足迹粒子轨迹 */
+.carbon-trail {
+    position: relative;
+}
+
+.carbon-trail::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    animation: trailMove 3s linear infinite;
+}
+
+@keyframes trailMove {
+    0% {
+        offset-distance: 0%;
+        opacity: 1;
+    }
+    100% {
+        offset-distance: 100%;
+        opacity: 0;
+    }
+}
+
+/* 绿叶摇摆（环保主题） */
+.leaf-sway {
+    transform-origin: bottom center;
+    animation: leafSway 3s ease-in-out infinite;
+}
+
+@keyframes leafSway {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* 水滴落下 */
+.water-drop {
+    animation: waterDrop 2s ease infinite;
+}
+
+@keyframes waterDrop {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* 风车旋转（可再生能源） */
+.windmill-spin {
+    animation: spin 4s linear infinite;
+}
+
+/* 太阳能板闪光 */
+.solar-flash {
+    animation: solarFlash 3s ease infinite;
+}
+
+@keyframes solarFlash {
+    0%, 90%, 100% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0.7;
+    }
+}
+
+/* 碳减少计数器滚动 */
+.carbon-counter {
+    display: inline-flex;
+    overflow: hidden;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+
+.carbon-counter .counter-digit {
+    animation: digitScroll 0.5s ease forwards;
+}
+
+@keyframes digitScroll {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ESG 评级星星填充 */
+.star-fill {
+    animation: starFill 0.4s ease forwards;
+    transform: scale(0);
+}
+
+@keyframes starFill {
+    0% {
+        transform: scale(0) rotate(-180deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(0);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* 证书徽章闪耀 */
+.badge-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.badge-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: badgeShine 3s ease infinite;
+}
+
+@keyframes badgeShine {
+    0%, 100% {
+        left: -100%;
+    }
+    50% {
+        left: 200%;
+    }
+}
+
+/* 报告生成进度 */
+.report-progress {
+    position: relative;
+    overflow: hidden;
+}
+
+.report-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: reportProgress 1.5s ease infinite;
+}
+
+@keyframes reportProgress {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(400%);
+    }
+}
+
+/* 实时数据脉冲点 */
+.live-indicator {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.live-indicator::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-success);
+    animation: livePulse 2s ease infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+    }
+}
+
+/* 碳中和徽章旋转光环 */
+.neutral-badge {
+    position: relative;
+}
+
+.neutral-badge::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--color-primary);
+    border-right-color: var(--color-primary-light);
+    animation: neutralSpin 3s linear infinite;
+}
+
+@keyframes neutralSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 扫描线效果（审核中） */
+.scan-line {
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+    animation: scanMove 2s linear infinite;
+}
+
+@keyframes scanMove {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+/* 打印动画禁用 */
+@media print {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .reveal,
+    .stagger-container .stagger-item {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
